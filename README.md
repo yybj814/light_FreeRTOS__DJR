@@ -8,14 +8,11 @@
 - ## 非阻塞延时原理
 - 用FreeROTS中的“osDelay"使任务在等待时进入阻塞态，不占用CPU的运行，从而实现非阻塞延时。
 - ## 核心代码
-- ```c
-  void StartLED0(void *argument)
- {
-  /* USER CODE BEGIN StartLED0 */
-  /* Infinite loop */
-  for(;;) {
-
-
+```c
+void StartLED0(void *argument)
+{
+  for(;;)
+  {
     HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
     HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_RESET);
@@ -25,7 +22,6 @@
     HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
     HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_RESET);
     osDelay(500);
-
 
     HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
