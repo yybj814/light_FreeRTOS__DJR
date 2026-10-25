@@ -6,7 +6,7 @@
 - ## 流水灯逻辑
 - 在任务的无限循环中，按 500ms 的间隔依次点亮 LED0 → LED1 → LED2，循环往复，形成流水灯效果。
 - ## 非阻塞延时原理
-- 用FreeROTS中的“osDelay"使任务在等待时进入阻塞态，不占用CPU的运行，从而实现非阻塞延时。
+- 用FreeRTOS中的“osDelay"使任务在等待时进入阻塞态，不占用CPU的运行，从而实现非阻塞延时。
 - ## 核心代码
 ```c
 void StartLED0(void *argument)
